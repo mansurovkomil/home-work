@@ -4,19 +4,279 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GameWpf"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="500">
+        mc:Ignorable="d" Title="LoginRegistery"
+        Height="700" Width="600"
+        AllowsTransparency="True" Background="Transparent"
+        WindowStyle="None" ResizeMode="NoResize">
     <Grid>
-        
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        
-        <Grid Grid.Row="0">
 
-            <TextBlock Text="Login" FontSize="40" FontStyle="Oblique"/>
+        <Grid x:Name="LoginPage" 
+            Visibility="Collapsed">
 
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Border CornerRadius="10" Grid.RowSpan="2">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#7be9f6" Offset="0.0"/>
+                        <GradientStop Color="#f083da" Offset="1"/>
+
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock Text="Log in"
+                           FontWeight="Light"
+                           FontFamily="helvetica"
+                           FontSize="26"
+                           Foreground="White"
+                           HorizontalAlignment="Center"
+                           Margin="0,90, 0,70"/>
+
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+                    <TextBox FontFamily="Helvetica"
+                             FontWeight="Light"
+                             Text="Username"
+                             FontSize="20"
+                             HorizontalAlignment="Center"
+                             Foreground="White"
+                             Background="Transparent"
+                             BorderThickness="0"
+                             Width="235"
+                             HorizontalContentAlignment="Left"
+                             Opacity="0.5"
+                             Height="25"
+                             Margin="173,0,0,0"/>
+                </StackPanel>
+                <Border Width="250"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5"/>
+
+
+            </StackPanel>
+
+
+
+            <StackPanel Grid.Row="1" >
+
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <PasswordBox FontFamily="Helvetica"
+                             FontWeight="Light"
+                             Password="Password"
+                             FontSize="20"
+                             HorizontalAlignment="Center"
+                             Foreground="White"
+                             Background="Transparent"
+                             BorderThickness="0"
+                             Width="235"
+                             HorizontalContentAlignment="Left"
+                             Opacity="0.5"
+                             Height="25"
+                             Margin="173,0,0,0"/>
+                </StackPanel>
+                <Border Width="250"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5"/>
+
+
+                <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
+
+                    <Button Height="40"
+                            Width="100"
+                            Margin="172,20,60,0"
+                            Content="Save"
+                            Foreground="Black"
+                            FontSize="25"
+                            Background="Snow"
+                            Click="Save_Clic">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border CornerRadius="16" Background="{TemplateBinding Background}">
+                                    <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Height="40"
+                            Width="100"
+                            Margin="0,0,0,-20"
+                            Content="Register"
+                            Foreground="Black"
+                            FontSize="25"
+                            Background="Snow"
+                            Click="Registration">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border CornerRadius="16" Background="{TemplateBinding Background}">
+                                    <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+
+            </StackPanel>
+
+        </Grid>
+
+        <Grid x:Name="RegisterPage" 
+            Visibility="Visible">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Border CornerRadius="10" Grid.RowSpan="2">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#7be9f6" Offset="0.0"/>
+                        <GradientStop Color="#f083da" Offset="1"/>
+
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock Text="Register"
+                           FontWeight="Light"
+                           FontFamily="helvetica"
+                           FontSize="26"
+                           Foreground="White"
+                           HorizontalAlignment="Center"
+                           Margin="0,90, 0,70"/>
+
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+                    <TextBox FontFamily="Helvetica"
+                             FontWeight="Light"
+                             Text="Username"
+                             FontSize="20"
+                             HorizontalAlignment="Center"
+                             Foreground="White"
+                             Background="Transparent"
+                             BorderThickness="0"
+                             Width="235"
+                             HorizontalContentAlignment="Left"
+                             Opacity="0.5"
+                             Height="25"
+                             Margin="173,0,0,0"/>
+                </StackPanel>
+                <Border Width="250"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5"/>
+
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+                    <TextBox FontFamily="Helvetica"
+                             FontWeight="Light"
+                             Text="Email"
+                             FontSize="20"
+                             HorizontalAlignment="Center"
+                             Foreground="White"
+                             Background="Transparent"
+                             BorderThickness="0"
+                             Width="235"
+                             HorizontalContentAlignment="Left"
+                             Opacity="0.5"
+                             Height="25"
+                             Margin="173,30,0,0"/>
+                </StackPanel>
+                <Border Width="250"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5"/>
+
+
+
+            </StackPanel>
+
+
+
+            <StackPanel Grid.Row="1" >
+
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <PasswordBox FontFamily="Helvetica"
+                             FontWeight="Light"
+                             Password="Password"
+                             FontSize="20"
+                             HorizontalAlignment="Center"
+                             Foreground="White"
+                             Background="Transparent"
+                             BorderThickness="0"
+                             Width="235"
+                             HorizontalContentAlignment="Left"
+                             Opacity="0.5"
+                             Height="25"
+                             Margin="173,0,0,0"/>
+                </StackPanel>
+                <Border Width="250"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5"/>
+
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+                    <TextBox FontFamily="Helvetica"
+                             FontWeight="Light"
+                             Text="Phone"
+                             FontSize="20"
+                             HorizontalAlignment="Center"
+                             Foreground="White"
+                             Background="Transparent"
+                             BorderThickness="0"
+                             Width="235"
+                             HorizontalContentAlignment="Left"
+                             Opacity="0.5"
+                             Height="25"
+                             Margin="173,30,0,0"/>
+                </StackPanel>
+                <Border Width="250"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5"/>
+
+
+                <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
+
+                    <Button Height="40"
+                            Width="100"
+                            Margin="172,0,60,0"
+                            Content="Save"
+                            Foreground="Black"
+                            FontSize="25"
+                            Background="Snow"
+                            Click="Save_Clic">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border CornerRadius="16" Background="{TemplateBinding Background}">
+                                    <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="RegistButten"
+                            Height="40"
+                            Width="100"
+                            Content="Log in"
+                            Foreground="Black"
+                            FontSize="25"
+                            Background="Snow"
+                            Click="Registration">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border CornerRadius="16" Background="{TemplateBinding Background}">
+                                    <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>

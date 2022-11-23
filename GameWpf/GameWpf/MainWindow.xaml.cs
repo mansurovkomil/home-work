@@ -24,5 +24,28 @@ namespace GameWpf
         {
             InitializeComponent();
         }
+        private void MainWindow_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed) DragMove();
+        }
+
+        private void Registration(object sender, RoutedEventArgs e)
+        {
+            if (LoginPage.Visibility == Visibility.Visible)
+            {
+                LoginPage.Visibility = Visibility.Collapsed;
+                RegisterPage.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                LoginPage.Visibility = Visibility.Visible;
+                RegisterPage.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void Save_Clic(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
